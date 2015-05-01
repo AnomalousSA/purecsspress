@@ -2,12 +2,11 @@
 /**
  *
  * @package WordPress
- * @subpackage Monstrosity
- * @since Monstrosity 0.1
+ * @subpackage PurecssPress
+ * @since Purecsspress 1.0
  *
- * Last Updated: March 11, 2014
+ * Last Revised: May 01, 2015
  */
-//require_once('includes/monstrosity_options.php');
 
 if ( ! function_exists('purecsspress_theme_features') ) {
 

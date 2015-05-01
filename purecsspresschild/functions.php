@@ -2,10 +2,10 @@
 /**
  *
  * @package WordPress
- * @subpackage Monstrosity Child Theme
- * @since Monstrosity 0.1
+ * @subpackage PurecssPress Child Theme
+ * @since Purecsspress 1.0
  *
- * Last Updated: March 11, 2014
+ * Last Revised: May 01, 2015
  */
 
 function remove_scripts()

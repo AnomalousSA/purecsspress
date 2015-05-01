@@ -5,10 +5,10 @@
  * Description: Default Index template to display loop of blog posts
  *
  * @package WordPress
- * @subpackage Monstrosity
- * @since Monstrosity 0.1
+ * @subpackage PurecssPress
+ * @since Purecsspress 1.0
  *
- * Last Revised: Dec 12, 2013
+ * Last Revised: May 01, 2015
  */
 
 get_header(); ?>

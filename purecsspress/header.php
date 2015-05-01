@@ -3,10 +3,10 @@
  * Default Page Header
  *
  * @package WordPress
- * @subpackage Monstrosity
- * @since Monstrosity 0.1
+ * @subpackage PurecssPress
+ * @since Purecsspress 1.0
  *
- * Last Revised: Apr 22, 2015
+ * Last Revised: May 01, 2015
  */
 global $childDir;
 $childDir = dirname(get_bloginfo('stylesheet_url'));
