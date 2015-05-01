@@ -1,0 +1,115 @@
+<!doctype html>
+<!-- Template -->
+<!-- Site Scripted by Anomalous -->
+<!-- http://www.anomalous.co.za -->
+<!-- 29 July 2013 -->
+<html>
+    <head>
+        <meta charset="utf-8">    
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Your page title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="assets/css/pure.css" />
+        <link rel="stylesheet" href="assets/css/pure-responsive.css" />
+        <link rel="stylesheet" href="assets/css/responsive-menu.css" />    
+        <link rel="stylesheet" href="assets/css/font-awesome.css" />
+        <link rel="stylesheet" href="assets/css/style.css" />
+        <!--[if lt IE 9]>
+        <script src="assets/js/vendor/html5shiv.js"></script>
+        <![endif]-->
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+        <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    </head>
+    <body>
+	    <div class="pure-menu pure-menu-horizontal pure-menu-2 pure-menu-responsive">
+            <a href="#" class="pure-menu-heading">Site Title</a>
+            <a href="#" class="pure-menu-toggle">Open</a>
+            <ul>
+                <li class="pure-menu-selected"><a href="#">Home</a></li>
+                <li><a href="#">Flickr</a></li>
+                <li><a href="#">Messenger</a></li>
+                <li class="pure-menu-separator">&nbsp;</li>
+                <li class="pure-menu-disabled"><a href="#">Sports</a></li>
+                <li><a href="#">Finance</a></li>
+            </ul>
+        </div>
+	    <div class="pure-g">
+		    <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+		        <div class="l-box">
+		            <h3>Lorem Ipsum</h3>
+		            <p>
+		                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+		            </p>
+		        </div>
+		    </div>
+
+		    <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+		        <div class="l-box">
+		            <h3>Dolor Sit Amet</h3>
+		            <p>
+		                Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.
+		            </p>
+		        </div>
+		    </div>
+
+		    <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+		        <div class="l-box">
+		            <h3>Proident laborum</h3>
+		            <p>
+		                In culpa qui officia deserunt mollit anim id est laborum. incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+		            </p>
+		        </div>
+		    </div>
+
+		    <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+		        <div class="l-box">
+		            <h3>Praesent consectetur</h3>
+		            <p>
+		               Integer vitae lectus accumsan, egestas dui eget, ullamcorper urn. In feugiat tortor at turpis rhoncus tincidunt. Duis sed porttitor ante, eget venenatis lectus.
+		            </p>
+		        </div>
+		    </div>
+		</div>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="assets/scripts/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+		<script src="http://yui.yahooapis.com/3.17.2/build/yui/yui-min.js"></script>
+                <script src="assets/js/script.js"></script>
+		<script>
+                    YUI().use('node', function (Y) {
+                        var ACTIVE = 'pure-menu-active';
+
+                        //create a single event listener on the body, that listens to
+                        //click events on all `.pure-menu-toggle` elements.
+                        Y.one('body').delegate('click', function (e) {
+                            e.preventDefault();
+
+                            //gets the parent. This is the `pure-menu` element.
+                            var parent = e.currentTarget.get('parentNode');
+
+                            //toggles the `pure-menu-active` class on the parent element
+                            parent.toggleClass(ACTIVE);
+
+                            //toggles the text within the `pure-menu-toggle` element.
+                            if (parent.hasClass(ACTIVE)) {
+                                e.currentTarget.set('text', 'Close');
+                            }
+                            else {
+                                e.currentTarget.set('text', 'Open')
+                            }
+                        }, '.pure-menu-toggle');
+                    });
+		</script>
+		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+		<script>
+			(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+			function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+			e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+			e.src='//www.google-analytics.com/analytics.js';
+			r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+			ga('create','UA-XXXXX-X');ga('send','pageview');
+		</script>
+	</body>
+</html>

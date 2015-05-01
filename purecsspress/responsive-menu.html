@@ -1,0 +1,444 @@
+<!doctype html>
+<!-- Template -->
+<!-- Site Scripted by Anomalous -->
+<!-- http://www.anomalous.co.za -->
+<!-- 29 July 2013 -->
+<html>
+	<head>
+	    <meta charset="utf-8">    
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <title>Your page title</title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	    <style>
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+ 
+/* remember to highlight inserts somehow! */
+ins {
+    text-decoration: none;
+}
+del {
+    text-decoration: line-through;
+}
+ 
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+/*begin our styles*/
+ 
+body {
+    font: 16px/1.4em 'PT Sans', sans-serif;;
+    color: #1c1c1c;
+}
+ 
+p,
+ul {
+    margin: 0 0 1.5em;
+}
+ 
+ul {
+    list-style: disc;
+    padding: 0 0 0 20px;
+}
+ 
+a {
+    color: #1D745A;
+}
+ 
+h1 {
+ 
+}
+ 
+h2 {
+    font-family: 'PT Serif', serif;
+    font-size: 32px;
+    line-height: 1.4em;
+    margin: 0 0 .4em;
+    font-weight: bold;
+}
+ 
+/*layout*/
+ 
+.wrapper {
+}
+ 
+article {
+    border-bottom: 1px solid #d8d8d8;
+    padding: 10px 20px 0 20px;
+    margin: 10px 0;
+}
+ 
+/*header*/
+ 
+header {
+    background: #1c1c1c;
+    padding: 15px 20px;
+}
+ 
+        /*shorter clearfix http://nicolasgallagher.com/micro-clearfix-hack/*/
+        header:before,
+        header:after {
+            content:"";
+            display:table;
+        }
+         
+        header:after {
+            clear:both;
+        }
+         
+        /* For IE 6/7 (trigger hasLayout) */
+        header {
+            zoom:1;
+        }
+ 
+h1.logo a {
+    color: #d8d8d8;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 20px;
+    line-height: 22px;
+    float: left;
+    letter-spacing: 0.2em;
+}
+ 
+a.to_nav {
+    float: right;
+    color: #fff;
+    background: #4e4e4e;
+    text-decoration: none;
+    padding: 0 10px;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 22px;
+    height: 22px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+ 
+a.to_nav:hover,
+a.to_nav:focus {
+    color: #1c1c1c;
+    background: #ccc;
+}
+
+/*navigation*/ 
+ #primary_nav {
+ 	display:none
+ }
+
+
+#primary_nav ul {
+    list-style: none;
+    background: #1c1c1c;
+    padding: 5px 0;
+    
+}
+ 
+#primary_nav li a {
+    display: block;
+    padding: 0 20px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    letter-spacing: 0.1em;
+    line-height: 2em;
+    height: 2em;
+    border-bottom: 1px solid #383838;
+}
+ 
+#primary_nav li:last-child a {
+    border-bottom: none;
+}
+ 
+#primary_nav li a:hover,
+#primary_nav li a:focus {
+    color: #1c1c1c;
+    background: #ccc;
+}
+ 
+/*footer*/
+ 
+footer {
+    font-family: 'PT Serif', serif;
+    font-style: italic;
+    text-align: center;
+    font-size: 14px;
+}
+
+
+
+@media only screen and (min-width: 768px) {
+ 
+    a.to_nav {
+        display: none;
+    }
+     
+    .wrapper {
+        position: relative;
+        width: 768px;
+        margin: auto;
+    }
+     
+    #primary_nav {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        background: none;
+        display: block;
+    }
+     
+    #primary_nav li {
+        display: inline;
+    }
+     
+    #primary_nav li a {
+        float: left;
+        border: none;
+        padding: 0 10px;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        border-radius: 2px;
+    }
+ 
+}
+
+
+	    </style>
+
+
+	    <!--<link rel="stylesheet" href="assets/css/vendor/base.css">
+	    <link rel="stylesheet" href="assets/css/vendor/grids.css">
+	    <link rel="stylesheet" href="assets/css/vendor/grids-responsive.css">
+	    <link rel="stylesheet" href="assets/css/vendor/forms.css">
+	    <link rel="stylesheet" href="assets/css/vendor/buttons.css">
+	    <link rel="stylesheet" href="assets/css/vendor/tables.css">
+	    
+	   
+	    <link rel="stylesheet" href="assets/css/responsive-menu.css">
+	    
+	    <link rel="stylesheet" href="assets/css/font-awesome.css">
+	    <link rel="stylesheet" href="assets/css/style.css">-->
+
+		<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+		<!--[if lt IE 9]>
+		<script src="assets/js/vendor/html5shiv.js"></script>
+		<![endif]-->
+		<!-- Fav and touch icons -->
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+		<link rel="shortcut icon" href="assets/ico/favicon.ico">
+	</head>
+	<body id="home">
+		<div class="wrapper">
+     
+        <header>
+         
+            <h1 class="logo"><a href="">Nav</a></h1>
+     
+    <a class="to_nav" href="#primary_nav" id="to_nav">Menu</a>
+         
+        </header>
+         <nav id="primary_nav" style="">
+         
+    <ul>
+     
+        <li><a href="">Portfolio</a></li>
+     
+        <li><a href="">About Me</a></li>
+     
+        <li><a href="">Nonsense</a></li>
+     
+        <li><a href="">Services</a></li>
+     
+        <li><a href="">Contact</a></li>
+     
+        <li><a href="#home">Top</a></li>
+     
+    </ul>
+ 
+</nav><!--end primary_nav-->
+        <article>
+         
+            <h2>Blue. No, yel&hellip;</h2>
+             
+            <p>Shut up! Will you shut up?! But you are dressed as one&hellip; Camelot! You don't vote for kings.</p>
+         
+        </article>
+         
+        <article>
+             
+            <h2>We want a shrubbery!!</h2>
+             
+            <p>Look, my liege! Shut up! But you are dressed as one&hellip;</p>
+             
+            <ul>
+                <li>The nose?</li>
+                <li>Shh! Knights, I bid you welcome to your new home. Let us ride to Camelot!</li>
+                <li>Look, my liege!</li>
+            </ul>
+         
+        </article>
+         
+        <article>
+             
+            <h2>Help, help, I'm being repressed!</h2>
+             
+            <p>Why? Listen. Strange women lying in ponds distributing swords is no basis for a system of government. Supreme executive power derives from a mandate from the masses, not from some farcical aquatic ceremony. Be quiet! A newt?</p>
+         
+        </article>
+         
+        <footer>
+         
+            <p>Copyright &copy;2012 Ian Yates <a href="http://webdesign.tutsplus.com">Webdesigntuts+</a></p>
+         
+        </footer>
+
+
+
+     
+    </div><!--end wrapper-->
+	    
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="assets/scripts/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+	
+		<script>
+			/*jQuery(document).ready(function() {
+			$(".to_nav").on("click" , function(e) {
+			e.preventDefault();
+			$("#primary_nav").slideToggle("slow");
+			});
+
+			$( window ).resize(function() {
+			if ($(window).width() > 768) {
+			$("#primary_nav").show();
+			} 
+			});
+
+			});*/
+			<!--
+			var checked = 0;
+			var viewportwidth;
+			var viewportheight;
+
+			// Show the Menu
+			function showDiv(show) {
+			    var s = document.getElementById(show);
+			    if (!s) {
+			        return true;
+			    }
+			    s.style.display = "block";
+			    return true;
+			}
+
+			// Hide the menu
+			function hideDiv(hide) {
+			    var h = document.getElementById(hide);
+			    if (!h) {
+			        return true;
+			    }
+			    h.style.display = "none";
+			    return true;
+			}
+
+			// Function started on window resize
+			function resize() {
+							
+				if (typeof window.innerWidth != 'undefined') {
+				      viewportwidth = window.innerWidth,
+				      viewportheight = window.innerHeight
+				 } else if (typeof document.documentElement != 'undefined' // IE6 in standards compliant mode (i.e. with a valid doctype as the first line in the document)
+				     && typeof document.documentElement.clientWidth !=
+				     'undefined' && document.documentElement.clientWidth != 0) {
+				       viewportwidth = document.documentElement.clientWidth,
+				       viewportheight = document.documentElement.clientHeight
+				 } else {
+				       viewportwidth = document.getElementsByTagName('body')[0].clientWidth, // older versions of IE
+				       viewportheight = document.getElementsByTagName('body')[0].clientHeight
+				 }
+
+				// Condition see if window greater than 768 px
+				if (viewportwidth>768) {
+					showDiv("primary_nav");
+				} else {
+					hideDiv("primary_nav");
+				}
+
+			}
+
+			document.onreadystatechange = function() {
+			    if (document.readyState === 'complete') {
+			        document.getElementById('to_nav').onclick = function(e) { 
+			        	e.preventDefault();
+						if (checked === 0) {
+							showDiv("primary_nav");
+							checked = 1;
+						} else {
+							hideDiv("primary_nav");
+							checked = 0;
+						}
+			 		};
+			 		window.onresize = resize; // When window resizes
+			    }
+			};
+			//-->
+		</script>
+		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+		<script>
+			(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+			function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+			e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+			e.src='//www.google-analytics.com/analytics.js';
+			r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+			ga('create','UA-XXXXX-X');ga('send','pageview');
+		</script>
+	</body>
+</html>
