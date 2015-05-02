@@ -39,29 +39,5 @@ $options = get_option( 'my_option_name' );
             <p>Why do I have to update my browser?<br> Old browsers (especially Internet Explorer versions 6, 7, and 8) are less stable, and much more vulnerable to viruses, spyware, malware, and other security issues. So security alone is a very good reason to upgrade.<br><br> But there is more: We rely on new Web design technologies. These new languages serve as a foundation for many websites today, and for virtually all new websites and Web apps. But unfortunately, many of these new websites will neither look nor function in the same way in old browsers like IE8.</p>
             <p>Thanks</p>
     <![endif]-->
-    <div class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="<?php echo home_url( '/' ); ?>">Project name</a>
-                </div>
-                <?php
-                    wp_nav_menu( array(
-                        'menu'              => 'main-menu',
-                        'theme_location'    => 'main-menu',
-                        'depth'             => 2,
-                        'container'         => 'div',
-                        'container_class'   => 'collapse navbar-collapse',
-                        'container_id'      => 'bs-example-navbar-collapse-1',
-                        'menu_class'        => 'nav navbar-nav',
-                        'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-                        'walker'            => new wp_bootstrap_navwalker())
-                    );
-                ?>               
-            </div>
-        </div>
+    <?php wp_nav_menu(); ?>
+                
