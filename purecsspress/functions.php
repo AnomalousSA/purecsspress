@@ -11,7 +11,6 @@
 if ( is_admin() ) {
 	require_once( get_template_directory() . '/admin/inc/theme-options.php' );
 }
-
 if ( ! function_exists('purecsspress_theme_features') ) {
 
 // Register Theme Features

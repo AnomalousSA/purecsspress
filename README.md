@@ -1,7 +1,7 @@
 Pure.css Press
 =================
 
-## WordPress Starter Theme
+## Pure.css WordPress starter theme
 
 Version: 1
 
@@ -16,6 +16,8 @@ This is a base theme, and should be used by a developer.
 It has no pretty templates.
 
 ## Also Look at
+
+Pure.css Press short codes (Pure.css) [Pure.css Press short codes theme](https://github.com/djm56/purecsspress-shortcodes)
 
 Monstrosity Wordpress Theme (Bootstrap) [Monstrosity theme](https://github.com/djm56/Monstrosity-Theme)
 

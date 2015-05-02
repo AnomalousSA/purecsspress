@@ -37,6 +37,18 @@ $options[] = array( 'title'   => __( 'General Settings', 'textdomain' ), // Tab 
                     'tab'     => 'options', // Tab slug (unique)
                     'type'    => 'heading'); // type = Heading
 
+$options[] = array( 'title'   => __( 'Styling', 'textdomain' ), // Tab name
+                    'tab'     => 'styling', // Tab slug (unique)
+                    'type'    => 'heading'); // type = Heading
+
+$options[] = array( 'title'   => __( 'Header/Footer', 'textdomain' ), // Tab name
+                    'tab'     => 'headfoot', // Tab slug (unique)
+                    'type'    => 'heading'); // type = Heading
+
+$options[] = array( 'title'   => __( 'Custom', 'textdomain' ), // Tab name
+                    'tab'     => 'custom', // Tab slug (unique)
+                    'type'    => 'heading'); // type = Heading
+
 $options[] = array( 'title'   => __( 'Example Options', 'textdomain' ),
                     'tab'     => 'tools',
                     'type'    => 'heading');
@@ -83,8 +95,133 @@ $options[] = array( 'title'   => __( 'Textarea Field Example', 'textdomain' ),
                     'type'    => 'textarea' );
 
 
+/*
+ * 
+ * Second Tab
+ */
+
+$options[] = array( 'title'   => __( 'Background', 'textdomain' ), // optional
+					'tab'     => 'styling', // must be the same slug as the heading it's belongs to
+                    'desc'    => __( 'Choose background options', 'textdomain' ), // optional
+                    'type'    => 'info' );
+
+
+$options[] = array( 'title'   => __( 'Background Colour', 'textdomain' ),
+					'tab'     => 'styling',
+                    'desc'    => __( 'Select a color.', 'textdomain' ),
+                    'id'      => $shortname . '_background_color',
+                    'std'     => '#ffffff',
+                    'type'    => 'color' );
+
+$options[] = array( 'title'   => __( 'Background Image', 'textdomain' ),
+					'tab'     => 'styling',
+                    'desc'    => __( 'Please select a backgroundimage.', 'textdomain' ),
+                    'id'      => $shortname . '_background_image',
+                    'std'     => '',
+                    'type'    => 'upload' );
+
+$options[] = array( 'title'   => __( 'Font Colours', 'textdomain' ), // optional
+					'tab'     => 'styling', // must be the same slug as the heading it's belongs to
+                    'desc'    => __( 'Change font options', 'textdomain' ), // optional
+                    'type'    => 'info' );
+
+$options[] = array( 'title'   => __( 'Main Colour', 'textdomain' ),
+					'tab'     => 'styling',
+                    'desc'    => __( 'Select a color.', 'textdomain' ),
+                    'id'      => $shortname . '_font_color',
+                    'std'     => '#000000',
+                    'type'    => 'color' );
+$options[] = array( 'title'   => __( 'Link Colour', 'textdomain' ),
+					'tab'     => 'styling',
+                    'desc'    => __( 'Select a color.', 'textdomain' ),
+                    'id'      => $shortname . '_link_color',
+                    'std'     => '#000000',
+                    'type'    => 'color' );
+
+$options[] = array( 'title'   => __( 'Link Hover Colour', 'textdomain' ),
+					'tab'     => 'styling',
+                    'desc'    => __( 'Select a color.', 'textdomain' ),
+                    'id'      => $shortname . '_link_hover_color',
+                    'std'     => '#000000',
+                    'type'    => 'color' );
+
+$options[] = array( 'title'   => __( 'Header Colour', 'textdomain' ),
+					'tab'     => 'styling',
+                    'desc'    => __( 'Select a color.', 'textdomain' ),
+                    'id'      => $shortname . '_header_color',
+                    'std'     => '#000000',
+                    'type'    => 'color' );
+
+
+
+$options[] = array( 'title'   => __( 'Font Sizes', 'textdomain' ), // optional
+					'tab'     => 'styling', // must be the same slug as the heading it's belongs to
+                    'desc'    => __( 'Please select the font size add the px, pt, em.', 'textdomain' ), // optional
+                    'type'    => 'info' );
+
+$options[] = array( 'title'   => __( 'Page font size', 'textdomain' ),
+					'tab'     => 'styling',
+                    //'desc'    => __( '', 'textdomain' ),
+                    'id'      => $shortname . '_main_font_size',
+                    'std'     => '0.875em',
+                    'type'    => 'text' );
+
+$options[] = array( 'title'   => __( 'H1 size', 'textdomain' ),
+					'tab'     => 'styling',
+                    //'desc'    => __( 'Please select the font size add the px, pt, em.', 'textdomain' ),
+                    'id'      => $shortname . '_h_1_size',
+                    'std'     => '2em',
+                    'type'    => 'text' );
+$options[] = array( 'title'   => __( 'H2 size', 'textdomain' ),
+					'tab'     => 'styling',
+                    //'desc'    => __( 'Please select the font size add the px, pt, em.', 'textdomain' ),
+                    'id'      => $shortname . '_h_2_size',
+                    'std'     => '1.5em',
+                    'type'    => 'text' );
+$options[] = array( 'title'   => __( 'H3 size', 'textdomain' ),
+					'tab'     => 'styling',
+                    //'desc'    => __( 'Please select the font size add the px, pt, em.', 'textdomain' ),
+                    'id'      => $shortname . '_h_3_size',
+                    'std'     => '1.17em',
+                    'type'    => 'text' );
+$options[] = array( 'title'   => __( 'H4 size', 'textdomain' ),
+					'tab'     => 'styling',
+                    //'desc'    => __( 'Please select the font size add the px, pt, em.', 'textdomain' ),
+                    'id'      => $shortname . '_h_4_size',
+                    'std'     => '1.12em',
+                    'type'    => 'text' );
+$options[] = array( 'title'   => __( 'H5 size', 'textdomain' ),
+					'tab'     => 'styling',
+                    //'desc'    => __( 'Please select the font size add the px, pt, em.', 'textdomain' ),
+                    'id'      => $shortname . '_h_5_size',
+                    'std'     => '0.83em',
+                    'type'    => 'text' );
+$options[] = array( 'title'   => __( 'H6 size', 'textdomain' ),
+					'tab'     => 'styling',
+                    //'desc'    => __( 'Please select the font size add the px, pt, em.', 'textdomain' ),
+                    'id'      => $shortname . '_h_6_size',
+                    'std'     => '0.75em',
+                    'type'    => 'text' );
+
+/*
+ * Fith Tab
+ */
+
+$options[] = array( 'title'   => __( 'Custom Script', 'textdomain' ),
+					'tab'     => 'custom',
+                    'desc'    => __( 'Dont include the opening and closing script tags', 'textdomain' ),
+                    'id'      => $shortname . '_script',
+                    'std'     => '',
+                    'type'    => 'textarea' );
+
+$options[] = array( 'title'   => __( 'Custom Styling', 'textdomain' ),
+					'tab'     => 'custom',
+                    'desc'    => __( 'Dont include the opening and closing style tags', 'textdomain' ),
+                    'id'      => $shortname . '_style',
+                    'std'     => '',
+                    'type'    => 'textarea' );
 /* ---------------------------------------------------------------------------------------------------
-    Second Tab
+    Third Tab
 --------------------------------------------------------------------------------------------------- */
 
 
