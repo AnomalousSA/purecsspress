@@ -1,7 +1,7 @@
 Pure.css Press
 =================
 
-# WordPress Starter Theme
+## WordPress Starter Theme
 
 Version: 1
 
@@ -18,4 +18,11 @@ It has no pretty templates.
 ## Also Look at
 
 Monstrosity Wordpress Theme (Bootstrap) [Monstrosity theme](https://github.com/djm56/Monstrosity-Theme)
+
 Monstrosity short codes (Bootstrap) [Monstrosity short codes](https://github.com/djm56/Monstrosity-Shortcodes)
+
+
+## Acknowledgement
+
+
+Thanks to [Wordpress Theme Options Framewor](https://github.com/istefan/wpshed-theme-options) for developing a great WordPress theme options page framework.
