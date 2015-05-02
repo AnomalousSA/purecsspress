@@ -8,6 +8,10 @@
  * Last Revised: May 01, 2015
  */
 
+if ( is_admin() ) {
+	require_once( get_template_directory() . '/admin/inc/theme-options.php' );
+}
+
 if ( ! function_exists('purecsspress_theme_features') ) {
 
 // Register Theme Features
@@ -56,16 +60,16 @@ add_action( 'init', 'purecsspress_navigation_menus' );
 // Register Style
 function purecsspress_styles() {
 
-	wp_register_style( 'purecss', get_template_directory_uri().'/assets/css/bootstrap.min.cs', false, '0.6', 'all' );
+	wp_register_style( 'purecss', get_template_directory_uri().'/assets/css/pure-min.css', false, '0.6', 'all' );
 	wp_enqueue_style( 'purecss' );
 
-	wp_register_style( 'purecss-responsive', get_template_directory_uri().'/assets/css/font-awesome.cs', array( 'purecss' ), '0.6', 'all' );
+	wp_register_style( 'purecss-responsive', get_template_directory_uri().'/assets/css/grids-responsive-min.css', array( 'purecss' ), '0.6', 'all' );
 	wp_enqueue_style( 'purecss-responsive' );
 
-	wp_register_style( 'fontawesome', get_template_directory_uri().'/assets/css/font-awesome.cs', array( 'purecss', 'purecss-responsive' ), '4.4.3', 'all' );
+	wp_register_style( 'fontawesome', get_template_directory_uri().'/assets/css/font-awesome.min.css', array( 'purecss', 'purecss-responsive' ), '4.4.3', 'all' );
 	wp_enqueue_style( 'fontawesome' );
 
-	wp_register_style( 'mainstyle', get_template_directory_uri().'/assets/css/font-awesome.cs', array( 'purecss', ' purecss-responsive', ' fontawesome' ), false, 'all' );
+	wp_register_style( 'mainstyle', get_template_directory_uri().'/assets/css/style.css', array( 'purecss', ' purecss-responsive', ' fontawesome' ), false, 'all' );
 	wp_enqueue_style( 'mainstyle' );
 
 }
@@ -76,7 +80,7 @@ add_action( 'wp_enqueue_scripts', 'purecsspress_styles' );
 // Register Script
 function purecsspress_scripts() {
 
-	wp_register_script( 'mainscript', get_template_directory_uri().'/assets/css/bootstrap.min.css', array( 'jquery' ), '1', true );
+	wp_register_script( 'mainscript', get_template_directory_uri().'/assets/scripts/script.js', array( 'jquery' ), '1', true );
 	wp_enqueue_script( 'mainscript' );
 
 }
