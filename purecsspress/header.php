@@ -10,7 +10,6 @@
  */
 global $childDir;
 $childDir = dirname(get_bloginfo('stylesheet_url'));
-$options = get_option( 'my_option_name' );
 ?><!DOCTYPE html>
 <!-- Monstrosity -->
 <!-- http://www.anomalous.co.za/monstrosity -->
@@ -28,16 +27,31 @@ $options = get_option( 'my_option_name' );
     <link rel="apple-touch-icon-precomposed" href="<?php print $childDir; ?>/assets/ico/apple-touch-icon-57x57-precomposed.png">
     <?php wp_head(); ?>
     <!--[if lt IE 9]>
-        <link rel='stylesheet' type='text/css' href="http://xpandaapp.sugartheagency.co.za/assets/css/ie8.css">
+        <link rel='stylesheet' type='text/css' href="<?php print $childDir; ?>/assets/css/ie8.css">
         <script src="<?php print $childDir; ?>/assets/js/vendor/html5shiv.js"></script>
     <![endif]-->
 </head>
-<body <?php body_class(''); ?>  data-spy="scroll" data-target=".bs-docs-sidebar" data-offset="10">
+<body <?php body_class(''); ?> >
     <!--[if lt IE 9]>
             <h3>Please upgrade your web browser</h3>
             <p>We recommend that you <a href="http://browsehappy.com/" style="color:#000;text-decoration:underline">upgrade</a> your web browser so you can use this Website.</p>
             <p>Why do I have to update my browser?<br> Old browsers (especially Internet Explorer versions 6, 7, and 8) are less stable, and much more vulnerable to viruses, spyware, malware, and other security issues. So security alone is a very good reason to upgrade.<br><br> But there is more: We rely on new Web design technologies. These new languages serve as a foundation for many websites today, and for virtually all new websites and Web apps. But unfortunately, many of these new websites will neither look nor function in the same way in old browsers like IE8.</p>
             <p>Thanks</p>
     <![endif]-->
-    <?php wp_nav_menu(); ?>
+    <div class="container">
+        <div class="pure-g">
+            <div class="pure-u-1">
+                <div class="pure-menu pure-menu-horizontal">
+                    <a href="#" class="pure-menu-heading pure-menu-link"><?php wp_title(); ?></a>
+                    <ul class="pure-menu-list">
+                       
+	<?php wp_nav_menu( array('theme_location'=>'main-menu', 'walker' => new Pure_Menu_Walker(), 'items_wrap' => '%3$s', 'container' => false) ); ?>
+
+                    </ul>
+                </div>
                 
+            </div>
+        </div>  
+        
+        
+        

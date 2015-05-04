@@ -11,6 +11,7 @@
 if ( is_admin() ) {
 	require_once( get_template_directory() . '/admin/inc/theme-options.php' );
 }
+require_once( get_template_directory() . '/walker/purewalker.php' );
 if ( ! function_exists('purecsspress_theme_features') ) {
 
 // Register Theme Features
@@ -68,8 +69,8 @@ function purecsspress_styles() {
 	wp_register_style( 'fontawesome', get_template_directory_uri().'/assets/css/font-awesome.min.css', array( 'purecss', 'purecss-responsive' ), '4.4.3', 'all' );
 	wp_enqueue_style( 'fontawesome' );
 
-	wp_register_style( 'mainstyle', get_template_directory_uri().'/assets/css/style.css', array( 'purecss', ' purecss-responsive', ' fontawesome' ), false, 'all' );
-	wp_enqueue_style( 'mainstyle' );
+	wp_register_style( 'puremainstyle', get_template_directory_uri().'/assets/css/style.css', array( 'fontawesome' ), '1.0', 'all' );
+	wp_enqueue_style( 'puremainstyle' );
 
 }
 
@@ -213,5 +214,20 @@ function purecsspress_widgets_init() {
 
 add_action( 'init', 'purecsspress_widgets_init' );
 
+
+if ( ! function_exists( 'purecsspress_posted_on' ) ) :
+  
+  function purecsspress_posted_on() {
+    printf( __( '<span class="sep">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="byline"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'bootstrap' ),
+      esc_url( get_permalink() ),
+      esc_attr( get_the_time() ),
+      esc_attr( get_the_date( 'c' ) ),
+      esc_html( get_the_date() ),
+      esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+      esc_attr( sprintf( __( 'View all posts by %s', 'purecsspress' ), get_the_author() ) ),
+      esc_html( get_the_author() )
+    );
+  }
+endif;
 
  ?>

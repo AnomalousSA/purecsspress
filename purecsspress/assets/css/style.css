@@ -7,3 +7,7 @@ html, button, input, select, textarea,
     /* Set your content font stack here: */
     font-family: Georgia, Times, "Times New Roman", serif;
 }
+.container {
+    max-width:1170px;
+    margin:0 auto;
+}
