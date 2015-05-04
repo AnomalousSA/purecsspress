@@ -5,6 +5,30 @@ Pure.css Press
 
 Version: 1
 
+## How to use
+
+Here is a example of using the pure nav walker to create menu (Special thanks to [Tomoro - Simeon Griggs](http://tomoro.com.au/) for creating the Pure.css Walker)
+
+```
+<div class="pure-menu pure-menu-horizontal">
+    <a href="<?php echo home_url('/'); ?>" class="pure-menu-heading pure-menu-link"><?php wp_title(); ?></a>
+    <?php
+    wp_nav_menu(array(
+        'menu' => 'main-menu',
+        'theme_location' => 'main-menu',
+        'depth' => 2,
+        'container' => false,
+        //'container_class'   => 'pure-menu pure-menu-horizontal',
+        //'container_id'      => 'bs-example-navbar-collapse-1',
+        'menu_class' => 'pure-menu-list',
+        'fallback_cb' => 'pure_menu_walker::fallback',
+        'walker' => new pure_menu_walker())
+    );
+    ?>
+</div>    
+```
+I exclude the container as I wanted to put in the home link.
+
 ## Author:
 
 Donovan Maidens ( [@Anomalous_Bot](http://twitter.com/Anomalous_Bot) / [anomalous.co.za](http://anomalous.co.za) )

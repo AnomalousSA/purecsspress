@@ -11,7 +11,7 @@
 if ( is_admin() ) {
 	require_once( get_template_directory() . '/admin/inc/theme-options.php' );
 }
-require_once( get_template_directory() . '/walker/purewalker.php' );
+require_once('walker/pure_menu_walker.php');
 if ( ! function_exists('purecsspress_theme_features') ) {
 
 // Register Theme Features
