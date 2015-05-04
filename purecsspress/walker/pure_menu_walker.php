@@ -12,7 +12,7 @@ class pure_menu_walker extends Walker_Nav_Menu {
 	
 	function start_lvl(&$output, $depth = 0, $args = array()) {
 		$indent = str_repeat("t", $depth);
-		$output .= "n$indent<ul class='pure-menu-list'>";
+		$output .= "$indent<ul class='pure-menu-children'>";
 	}
 	
 	function end_lvl(&$output, $depth = 0, $args = array()) {
@@ -36,7 +36,7 @@ class pure_menu_walker extends Walker_Nav_Menu {
 		/* Check for children */
 		$children = get_posts(array('post_type' => 'nav_menu_item', 'nopaging' => true, 'numberposts' => 1, 'meta_key' => '_menu_item_menu_item_parent', 'meta_value' => $item->ID));
 		if (!empty($children)) {
-			$classes[] = 'has-sub';
+			$classes[] = 'has-sub pure-menu-has-children pure-menu-allow-hover';
 		}
 		
 		$class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args));

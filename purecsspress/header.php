@@ -42,7 +42,7 @@ $childDir = dirname(get_bloginfo('stylesheet_url'));
             <div class="pure-g">
                 <div class="pure-u-1">
                     <div class="pure-menu pure-menu-horizontal">
-                        <a href="<?php echo home_url('/'); ?>" class="pure-menu-heading pure-menu-link"><?php wp_title(); ?></a>
+                         <a href="<?php echo home_url('/'); ?>" class="pure-menu-heading pure-menu-link"><?php wp_title(); ?></a>
                         <?php
                         wp_nav_menu(array(
                             'menu' => 'main-menu',
@@ -59,3 +59,6 @@ $childDir = dirname(get_bloginfo('stylesheet_url'));
                     </div>    
                 </div>
             </div>  
+
+
+  
