@@ -52,3 +52,6 @@ Monstrosity short codes (Bootstrap) [Monstrosity short codes](https://github.com
 
 
 Thanks to [Wordpress Theme Options Framewor](https://github.com/istefan/wpshed-theme-options) for developing a great WordPress theme options page framework.
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/AnomalousSA/purecsspress/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
