@@ -8,6 +8,8 @@
  * Last Revised: May 01, 2015
  */
 
+if ( ! isset( $content_width ) ) $content_width = 900; 
+
 if ( is_admin() ) {
 	require_once( get_template_directory() . '/admin/inc/theme-options.php' );
 }
@@ -31,6 +33,36 @@ function purecsspress_theme_features()  {
 
 	// Add theme support for document Title tag
 	add_theme_support( 'title-tag' );
+        
+        // Add theme support for Custom Background
+	$background_args = array(
+		'default-color'          => 'ffffff',
+		'default-image'          => '',
+		'default-repeat'         => '',
+		'default-position-x'     => '',
+		'wp-head-callback'       => '',
+		'admin-head-callback'    => '',
+		'admin-preview-callback' => '',
+	);
+	add_theme_support( 'custom-background', $background_args );
+
+	// Add theme support for Custom Header
+	$header_args = array(
+		'default-image'          => '',
+		'width'                  => 0,
+		'height'                 => 0,
+		'flex-width'             => false,
+		'flex-height'            => false,
+		'uploads'                => true,
+		'random-default'         => false,
+		'header-text'            => false,
+		'default-text-color'     => '',
+		'wp-head-callback'       => '',
+		'admin-head-callback'    => '',
+		'admin-preview-callback' => '',
+	);
+	add_theme_support( 'custom-header', $header_args );
+        
 }
 
 // Hook into the 'after_setup_theme' action
@@ -191,6 +223,14 @@ function purecsspress_breadcrumbs() {
   }
 } 
 
+if ( function_exists( 'add_theme_support' ) ) {
+  add_theme_support( 'post-thumbnails' );
+  set_post_thumbnail_size( 160, 120 ); // 160 pixels wide by 120 pixels high
+}
+if ( function_exists( 'add_image_size' ) ) {
+  add_image_size( 'bootstrap-small', 260, 180 ); // 260 pixels wide by 180 pixels high
+  add_image_size( 'bootstrap-medium', 360, 268 ); // 360 pixels wide by 268 pixels high
+}
 
 if ( ! function_exists( 'purecsspress_widgets_init' ) ) {
 
@@ -319,5 +359,17 @@ if ( ! function_exists( 'purecsspress_posted_on' ) ) :
     );
   }
 endif;
+
+
+
+function purecsspress_enqueue_comment_reply() {
+    // on single blog post pages with comments open and threaded comments
+    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) { 
+        // enqueue the javascript that performs in-link comment reply fanciness
+        wp_enqueue_script( 'comment-reply' ); 
+    }
+}
+// Hook into wp_enqueue_scripts
+add_action( 'wp_enqueue_scripts', 'purecsspress_enqueue_comment_reply' );
 
  ?>

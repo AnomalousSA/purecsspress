@@ -20,6 +20,13 @@ get_header(); ?>
                     <p class="meta"><?php echo purecsspress_posted_on();?></p>
                     <?php the_content();?>
                     <?php the_tags( '<p>Tags: ', ', ', '</p>'); ?>
+                    <?php wp_link_pages( array(
+	'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentyfourteen' ) . '</span>',
+	'after'       => '</div>',
+	'link_before' => '<span>',
+	'link_after'  => '</span>',
+	) );
+?>
                     <?php endwhile; // end of the loop. ?>
                     <?php comments_template(); ?>
                      <?php purecsspress_content_nav('nav-below');?>
