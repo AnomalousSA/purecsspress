@@ -192,28 +192,118 @@ function purecsspress_breadcrumbs() {
 } 
 
 
-function purecsspress_widgets_init() {
-  register_sidebar( array(
-    'name' => __('Page Sidebar', 'purecsspress'),
-    'id' => 'sidebar-page',
-    'before_widget' => '<div id="%1$s" class="widget %2$s">',
-    'after_widget' => "</div>",
-    'before_title' => '<h4 class="widget-title">',
-    'after_title' => '</h4>',
-  ) );
+if ( ! function_exists( 'purecsspress_widgets_init' ) ) {
 
-  register_sidebar( array(
-    'name' => __('Posts Sidebar', 'purecsspress'),
-    'id' => 'sidebar-posts',
-    'before_widget' => '<div id="%1$s" class="widget %2$s">',
-    'after_widget' => "</div>",
-    'before_title' => '<h4 class="widget-title">',
-    'after_title' => '</h4>',
-  ) );
+// Register Sidebar
+function purecsspress_widgets_init() {
+
+	$page = array(
+		'id'            => 'sidebar-page',
+		'name'          => __( 'Page Sidebar', 'purecsspress' ),
+		'description'   => __( 'Sidebar that appears on pages with sidebars.', 'purecsspress' ),
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+	);
+	register_sidebar( $page );
+        
+        $posts = array(
+		'id'            => 'sidebar-posts',
+		'name'          => __( 'Post Sidebar', 'purecsspress' ),
+		'description'   => __( 'Sidebar that appears on posts.', 'purecsspress' ),
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+	);
+	register_sidebar( $posts );
+
 }
 
-add_action( 'init', 'purecsspress_widgets_init' );
+// Hook into the 'widgets_init' action
+add_action( 'widgets_init', 'purecsspress_widgets_init' );
 
+}
+
+if ( ! function_exists( 'purecsspress_comment' ) ) :
+
+function purecsspress_comment( $comment, $args, $depth ) {
+	$GLOBALS['comment'] = $comment;
+	switch ( $comment->comment_type ) :
+		case 'pingback' :
+		case 'trackback' :
+	?>
+	<li class="post pingback">
+		<p><?php _e( 'Pingback:', 'purecsspress' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( '(Edit)', 'purecsspress' ), ' ' ); ?></p>
+	<?php
+			break;
+		default :
+	?>
+	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
+		<article id="comment-<?php comment_ID(); ?>" class="comment">
+			<footer>
+				<div class="comment-author vcard">
+					<?php echo get_avatar( $comment, 40 ); ?>
+					<?php printf( __( '%s <span class="says">says:</span>', 'purecsspress' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
+				</div><!-- .comment-author .vcard -->
+				<?php if ( $comment->comment_approved == '0' ) : ?>
+					<em><?php _e( 'Your comment is awaiting moderation.', 'purecsspress' ); ?></em>
+					<br />
+				<?php endif; ?>
+
+				<div class="comment-meta commentmetadata">
+					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><time pubdate datetime="<?php comment_time( 'c' ); ?>">
+					<?php
+						/* translators: 1: date, 2: time */
+						printf( __( '%1$s at %2$s', 'purecsspress' ), get_comment_date(), get_comment_time() ); ?>
+					</time></a>
+					<?php edit_comment_link( __( '(Edit)', 'purecsspress' ), ' ' );
+					?>
+				</div><!-- .comment-meta .commentmetadata -->
+			</footer>
+
+			<div class="comment-content"><?php comment_text(); ?></div>
+
+			<div class="reply">
+				<?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+			</div><!-- .reply -->
+		</article><!-- #comment-## -->
+
+	<?php
+			break;
+	endswitch;
+}
+endif; // ends check for bootstrapwp_comment()
+
+if ( ! function_exists( 'purecsspress_content_nav' ) ):
+/**
+ * Display navigation to next/previous pages when applicable
+ */
+function purecsspress_content_nav( $nav_id ) {
+	global $wp_query;
+	?>
+
+	<?php if ( is_single() ) : // navigation links for single posts ?>
+<ul class="pager">
+		<?php previous_post_link( '<li class="previous">%link</li>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'purecsspress' ) . '</span> %title' ); ?>
+		<?php next_post_link( '<li class="next">%link</li>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'purecsspress' ) . '</span>' ); ?>
+</ul>
+	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
+<ul class="pager">
+		<?php if ( get_next_posts_link() ) : ?>
+		<li class="next"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'purecsspress' ) ); ?></li>
+		<?php endif; ?>
+
+		<?php if ( get_previous_posts_link() ) : ?>
+		<li class="previous"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'purecsspress' ) ); ?></li>
+		<?php endif; ?>
+</ul>
+	<?php endif; ?>
+
+	<?php
+}
+endif; // bootstrapwp_content_nav
 
 if ( ! function_exists( 'purecsspress_posted_on' ) ) :
   

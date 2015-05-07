@@ -22,6 +22,7 @@ get_header(); ?>
                     <?php the_tags( '<p>Tags: ', ', ', '</p>'); ?>
                     <?php endwhile; // end of the loop. ?>
                     <?php comments_template(); ?>
+                     <?php purecsspress_content_nav('nav-below');?>
                 </div>              
                 <div class="pure-u-1-4"><?php get_sidebar('post'); ?></div>
             </div>         
