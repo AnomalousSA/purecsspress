@@ -34,34 +34,7 @@ function purecsspress_theme_features()  {
 	// Add theme support for document Title tag
 	add_theme_support( 'title-tag' );
         
-        // Add theme support for Custom Background
-	$background_args = array(
-		'default-color'          => 'ffffff',
-		'default-image'          => '',
-		'default-repeat'         => '',
-		'default-position-x'     => '',
-		'wp-head-callback'       => '',
-		'admin-head-callback'    => '',
-		'admin-preview-callback' => '',
-	);
-	add_theme_support( 'custom-background', $background_args );
-
-	// Add theme support for Custom Header
-	$header_args = array(
-		'default-image'          => '',
-		'width'                  => 0,
-		'height'                 => 0,
-		'flex-width'             => false,
-		'flex-height'            => false,
-		'uploads'                => true,
-		'random-default'         => false,
-		'header-text'            => false,
-		'default-text-color'     => '',
-		'wp-head-callback'       => '',
-		'admin-head-callback'    => '',
-		'admin-preview-callback' => '',
-	);
-	add_theme_support( 'custom-header', $header_args );
+        
         
 }
 
@@ -101,8 +74,7 @@ function purecsspress_styles() {
 	wp_register_style( 'fontawesome', get_template_directory_uri().'/assets/css/font-awesome.min.css', array( 'purecss', 'purecss-responsive' ), '4.4.3', 'all' );
 	wp_enqueue_style( 'fontawesome' );
 
-	wp_register_style( 'puremainstyle', get_template_directory_uri().'/assets/css/style.css', array( 'fontawesome' ), '1.0', 'all' );
-	wp_enqueue_style( 'puremainstyle' );
+	
 
 }
 
@@ -110,7 +82,7 @@ function purecsspress_styles() {
 add_action( 'wp_enqueue_scripts', 'purecsspress_styles' );
 
 // Register Script
-function purecsspress_scripts() {
+/*function purecsspress_scripts() {
 
 	wp_register_script( 'mainscript', get_template_directory_uri().'/assets/scripts/script.js', array( 'jquery' ), '1', true );
 	wp_enqueue_script( 'mainscript' );
@@ -118,7 +90,7 @@ function purecsspress_scripts() {
 }
 
 // Hook into the 'wp_enqueue_scripts' action
-add_action( 'wp_enqueue_scripts', 'purecsspress_scripts' );
+add_action( 'wp_enqueue_scripts', 'purecsspress_scripts' );*/
 
 
 // Bredcrumbs
