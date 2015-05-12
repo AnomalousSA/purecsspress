@@ -11,8 +11,8 @@
 global $childDir;
 $childDir = dirname(get_bloginfo('stylesheet_url'));
 ?><!DOCTYPE html>
-<!-- Monstrosity -->
-<!-- http://www.anomalous.co.za/monstrosity -->
+<!-- Purecsspress -->
+<!-- http://www.anomalous.co.za/bootpress -->
 <html <?php language_attributes(); ?>>
     <head>
         <meta charset="<?php bloginfo('charset'); ?>"/>
