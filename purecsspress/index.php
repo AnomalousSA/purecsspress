@@ -12,9 +12,9 @@
  */
 global $childDir;
 get_header(); ?>
-        <?php while ( have_posts() ) : the_post(); ?>
             <div class="pure-g">
                 <div class="pure-u-3-4">
+                <?php while ( have_posts() ) : the_post(); ?>
                     <?php if(function_exists('purecsspress_breadcrumbs')) purecsspress_breadcrumbs(); ?>
                     <h1><?php the_title();?></h1>
                    
