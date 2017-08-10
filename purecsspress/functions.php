@@ -65,33 +65,31 @@ add_action( 'init', 'purecsspress_navigation_menus' );
 // Register Style
 function purecsspress_styles() {
 
-	wp_register_style( 'purecss', get_template_directory_uri().'/assets/css/pure-min.css', false, '0.6', 'all' );
+	wp_register_style( 'purecss', get_template_directory_uri().'/assets/css/pure-min.css', false, '1.0.0', 'all' );
 	wp_enqueue_style( 'purecss' );
-
-	wp_register_style( 'purecss-responsive', get_template_directory_uri().'/assets/css/grids-responsive-min.css', array( 'purecss' ), '0.6', 'all' );
-	wp_enqueue_style( 'purecss-responsive' );
-
-	wp_register_style( 'fontawesome', get_template_directory_uri().'/assets/css/font-awesome.min.css', array( 'purecss', 'purecss-responsive' ), '4.4.3', 'all' );
+        
+        wp_register_style( 'purecss-responsive-ie', get_template_directory_uri().'/assets/css/grids-responsive-old-ie-min.css', false, '1.0.0', 'all' );
+	wp_style_add_data( 'purecss-responsive-ie', 'conditional', 'lte IE 8' );
+        wp_enqueue_style( 'purecss-responsive-ie' );
+        
+        wp_register_style( 'purecss-responsive', get_template_directory_uri().'/assets/css/grids-responsive-min.css', false, '1.0.0', 'all' );
+	wp_style_add_data( 'purecss-responsive', 'conditional', 'gt IE 8' );
+        wp_enqueue_style( 'purecss-responsive' );
+        
+	wp_register_style( 'fontawesome', get_template_directory_uri().'/assets/css/font-awesome.min.css', array( 'purecss', 'purecss-responsive' ), '4.7.0', 'all' );
 	wp_enqueue_style( 'fontawesome' );
-
-	
-
+        
+        wp_register_style( 'ie', get_template_directory_uri().'/assets/css/ie8.css', false, '1.0.0', 'all' );
+	wp_style_add_data( 'ie', 'conditional', 'lte IE 8' );
+        wp_enqueue_style( 'ie' );
+        
+        wp_register_script( 'htmlshiv', get_template_directory_uri().'/assets/scripts/vendor/html5shiv.js' , false, '3.7.0', 'all' );
+        wp_script_add_data( 'htmlshiv', 'conditional', 'lte IE 8' );
+        wp_enqueue_script( 'htmlshiv' );
 }
 
 // Hook into the 'wp_enqueue_scripts' action
 add_action( 'wp_enqueue_scripts', 'purecsspress_styles' );
-
-// Register Script
-/*function purecsspress_scripts() {
-
-	wp_register_script( 'mainscript', get_template_directory_uri().'/assets/scripts/script.js', array( 'jquery' ), '1', true );
-	wp_enqueue_script( 'mainscript' );
-
-}
-
-// Hook into the 'wp_enqueue_scripts' action
-add_action( 'wp_enqueue_scripts', 'purecsspress_scripts' );*/
-
 
 // Bredcrumbs
 

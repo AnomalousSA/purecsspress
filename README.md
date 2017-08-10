@@ -3,7 +3,7 @@ Pure.css Press
 
 ## Pure.css WordPress starter theme
 
-Version: 1
+Version: 1.0.0
 
 ## How to use
 
